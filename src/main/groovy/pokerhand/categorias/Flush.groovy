@@ -8,11 +8,11 @@ import pokerhand.Carta
 class Flush extends Base {
 	@Override
 	boolean pertence(List<Carta> cartas) {
-		helper.eDoMesmoNipe(cartas);
+		helper.eDoMesmoNipe(cartas)
 	}
 
 	@Override
 	int obterValorDesempate(List<Carta> cartas) {
-		helper.obterCartasMaiorValor(cartas)[0].valor.ordinal();
+		helper.obterCartasMaiorValor(cartas)[0].valor.ordinal()
 	}
 }

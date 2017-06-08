@@ -8,12 +8,12 @@ import pokerhand.Carta
 class Sequencia extends Base {
 	@Override
 	boolean pertence(List<Carta> cartas) {
-		helper.emSequanciaDeValor(cartas);
+		helper.emSequanciaDeValor(cartas)
 	}
 
 	@Override
 	int obterValorDesempate(List<Carta> cartas) {
 		cartas = helper.ordenarPorValor(cartas)
-		cartas[cartas.size() - 1].valor.ordinal();
+		cartas[cartas.size() - 1].valor.ordinal()
 	}
 }

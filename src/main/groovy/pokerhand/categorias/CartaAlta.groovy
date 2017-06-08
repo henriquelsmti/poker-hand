@@ -13,7 +13,7 @@ class CartaAlta extends Base{
 
 	@Override
 	int obterValorDesempate(List<Carta> cartas) {
-		cartas = helper.ordenarPorValor(cartas);
-		cartas[cartas.size() - 1].valor.ordinal();
+		cartas = helper.ordenarPorValor(cartas)
+		cartas[cartas.size() - 1].valor.ordinal()
 	}
 }

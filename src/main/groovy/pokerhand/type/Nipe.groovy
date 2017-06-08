@@ -8,21 +8,21 @@ enum Nipe {
 	ESPADAS("S"),
 	COPAS("H"),
 	OUROS("D"),
-	PAUS("C");
+	PAUS("C")
 
-	private String valor;
+	private String valor
 
 	private Nipe(value){
-		this.valor = value;
+		this.valor = value
 	}
 
 	static Nipe obterPorValor(valor){
-		for(Nipe item in Nipe.values()){
-			if(item.valor.equals(valor)) {
-				return item;
+		for(Nipe item in values()){
+			if(item.valor == valor) {
+				return item
 			}
 		}
-		throw new RuntimeException("O valor ${valor} não foi encontrado no enum!");
+		throw new RuntimeException("O valor ${valor} não foi encontrado no enum!")
 	}
 
 	String getValor(){

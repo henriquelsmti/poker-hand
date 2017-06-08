@@ -10,7 +10,7 @@ import spock.lang.Specification
  * Created by henriquemota on 08/06/17.
  */
 class QuadraSpec extends Specification{
-	PokerHandHelper helper = new PokerHandHelper();
+	PokerHandHelper helper = new PokerHandHelper()
 
 	def "testar pertence"(){
 		given:

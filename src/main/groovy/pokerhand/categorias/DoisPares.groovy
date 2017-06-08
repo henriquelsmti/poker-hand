@@ -9,25 +9,24 @@ import pokerhand.type.ValorDaCarta
 class DoisPares extends Base {
 	@Override
 	boolean pertence(List<Carta> cartas) {
-		Map<ValorDaCarta, Integer> map = helper.contarCartasPorValor(cartas)
 
-		int i = 0;
+		int i = 0
 		for(Map.Entry<ValorDaCarta, Integer> item in helper.contarCartasPorValor(cartas)){
 			if(item.value == 2){
 				i++
 			}
 		}
-		i == 2;
+		return i == 2
 	}
 
 	@Override
 	int obterValorDesempate(List<Carta> cartas) {
-		Map.Entry kicker;
+		Map.Entry<ValorDaCarta, Integer> kicker = null
 		for(Map.Entry<ValorDaCarta, Integer> item in helper.contarCartasPorValor(cartas)){
 			if(!kicker || (kicker && kicker.value > item.value)){
-				kicker = item;
+				kicker = item
 			}
 		}
-		kicker.key.ordinal();
+		return kicker.key.ordinal()
 	}
 }

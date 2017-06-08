@@ -12,14 +12,14 @@ class StraightFlush extends Base{
 	@Override
 	boolean pertence(List<Carta> cartas) {
 		if(!helper.eDoMesmoNipe(cartas))
-			return false;
+			return false
 
-		helper.emSequanciaDeValor(cartas);
+		helper.emSequanciaDeValor(cartas)
 	}
 
 	@Override
 	int obterValorDesempate(List<Carta> cartas) {
-		cartas = helper.ordenarPorValor(cartas);
-		cartas[cartas.size() - 1].valor.ordinal();
+		cartas = helper.ordenarPorValor(cartas)
+		cartas[cartas.size() - 1].valor.ordinal()
 	}
 }

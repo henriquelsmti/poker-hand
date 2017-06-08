@@ -8,12 +8,12 @@ import pokerhand.type.ValorDaCarta
  */
 class Carta {
 
-	Nipe nipe;
-	ValorDaCarta valor;
+	Nipe nipe
+	ValorDaCarta valor
 
 	Carta(Nipe nipe, ValorDaCarta valor){
-		this.nipe = nipe;
-		this.valor = valor;
+		this.nipe = nipe
+		this.valor = valor
 	}
 
 	@Override

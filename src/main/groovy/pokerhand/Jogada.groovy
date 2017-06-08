@@ -7,16 +7,16 @@ import pokerhand.type.Regra
  */
 class Jogada {
 
-	List<Carta> cartas;
-	Regra regra;
+	List<Carta> cartas
+	Regra regra
 
 	Jogada(List<Carta> cartas, Regra regra){
-		this.cartas = cartas;
-		this.regra = regra;
+		this.cartas = cartas
+		this.regra = regra
 	}
 
 	int obterValorDesempate(){
-		regra.categoria.obterValorDesempate(cartas);
+		regra.categoria.obterValorDesempate(cartas)
 	}
 
 }

@@ -9,7 +9,7 @@ import spock.lang.Specification
  */
 class JogadaSpec extends Specification{
 
-	PokerHandHelper helper = new PokerHandHelper();
+	PokerHandHelper helper = new PokerHandHelper()
 
 	def "valor de desenpate da jogada"(){
 		given:

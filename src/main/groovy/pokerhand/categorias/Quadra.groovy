@@ -10,18 +10,18 @@ import pokerhand.type.ValorDaCarta
 class Quadra extends Base{
 	@Override
 	boolean pertence(List<Carta> cartas) {
-		helper.contarMaiorOcorrenciadeMesmoValor(cartas) == 4;
+		helper.contarMaiorOcorrenciadeMesmoValor(cartas) == 4
 	}
 
 	@Override
 	int obterValorDesempate(List<Carta> cartas) {
-		Map.Entry kicker;
+		Map.Entry<ValorDaCarta, Integer> kicker = null
 		for(Map.Entry<ValorDaCarta, Integer> item in helper.contarCartasPorValor(cartas)){
 			if(!kicker || (kicker && kicker.value > item.value)){
-				kicker = item;
+				kicker = item
 			}
 		}
-		kicker.key.ordinal();
+		kicker.key.ordinal()
 	}
 
 }

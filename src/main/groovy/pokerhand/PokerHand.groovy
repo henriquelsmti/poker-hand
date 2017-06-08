@@ -7,26 +7,26 @@ import pokerhand.type.Result
  */
 class PokerHand {
 
-	Jogada jogada;
-	private PokerHandHelper helper = new PokerHandHelper();
+	Jogada jogada
+	private PokerHandHelper helper = new PokerHandHelper()
 
 	PokerHand(String jogada){
-		this.jogada = helper.contruirJogada(jogada);
+		this.jogada = helper.contruirJogada(jogada)
 	}
 
 	Result compareWith(PokerHand other){
-		int result = other.getJogada().regra.ordinal().compareTo(jogada.regra.ordinal())  ;
+		int result = other.getJogada().regra.ordinal().compareTo(jogada.regra.ordinal())
 
 		if(result == 0){
-			return jogada.obterValorDesempate().compareTo(other.getJogada().obterValorDesempate()) > 0? Result.WIN : Result.LOSS ;
+			return jogada.obterValorDesempate().compareTo(other.getJogada().obterValorDesempate()) > 0? Result.WIN : Result.LOSS
 		}
 
 		if(result > 0){
-			return Result.WIN;
+			return Result.WIN
 		}else if(result < 0){
-			return Result.LOSS;
+			return Result.LOSS
 		}
-		null;
+		null
 	}
 
 }

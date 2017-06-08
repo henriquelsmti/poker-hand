@@ -26,16 +26,16 @@ enum Regra {
 	TRINCA(new Trinca()),
 	DOIS_PARES(new DoisPares()),
 	UM_PAR(new UmPar()),
-	CARTA_ALTA(new CartaAlta());
+	CARTA_ALTA(new CartaAlta())
 
 
-	private Categoria categoria;
+	private Categoria categoria
 
 	private Regra(Categoria categoria) {
-		this.categoria = categoria;
+		this.categoria = categoria
 	}
 
 	Categoria getCategoria(){
-		this.categoria;
+		this.categoria
 	}
 }

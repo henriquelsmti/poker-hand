@@ -12,7 +12,7 @@ import spock.lang.Specification
  */
 class RoyalFlushSpec extends Specification{
 
-	PokerHandHelper helper = new PokerHandHelper();
+	PokerHandHelper helper = new PokerHandHelper()
 
 	def "testar pertence"(){
 		given:

@@ -16,29 +16,29 @@ enum ValorDaCarta {
 	VALETE("J"),
 	RAINHA("Q"),
 	REI("K"),
-	AS("A");
+	AS("A")
 
-	private String valor;
+	private String valor
 
 	private ValorDaCarta(String valor){
-		this.valor = valor;
+		this.valor = valor
 	}
 
 	String getValor(){
-		this.valor;
+		this.valor
 	}
 
 	int getPeso(){
-		this.ordinal();
+		this.ordinal()
 	}
 
 	static ValorDaCarta obterPorValor(valor){
-		for(ValorDaCarta item in ValorDaCarta.values()){
-			if(item.valor.equals(valor)) {
-				return item;
+		for(ValorDaCarta item in values()){
+			if(item.valor == valor) {
+				return item
 			}
 		}
-		throw new RuntimeException("O valor ${valor} não foi encontrado no enum!");
+		throw new RuntimeException("O valor ${valor} não foi encontrado no enum!")
 	}
 
 }

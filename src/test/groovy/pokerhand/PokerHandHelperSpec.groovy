@@ -15,7 +15,7 @@ class PokerHandHelperSpec extends Specification{
 		String mao = "${ carta1 } ${ carta2 } ${ carta3 } ${ carta4 } ${ carta5 }"
 
 		when:
-		List<Carta> cartas = new PokerHandHelper().construirCartas(mao);
+		List<Carta> cartas = new PokerHandHelper().construirCartas(mao)
 		then:
 		cartas.contains carta1
 		cartas.contains carta2
@@ -42,7 +42,7 @@ class PokerHandHelperSpec extends Specification{
 	def "construção das categorias"(){
 		when:
 		PokerHandHelper helper = new PokerHandHelper()
-		Regra regraCriada = helper.obterRegra(helper.construirCartas(jogada));
+		Regra regraCriada = helper.obterRegra(helper.construirCartas(jogada))
 
 		then:
 		regraCriada == regra

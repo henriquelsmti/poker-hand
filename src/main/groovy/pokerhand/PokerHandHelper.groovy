@@ -10,24 +10,24 @@ import pokerhand.type.ValorDaCarta
 class PokerHandHelper {
 
 	Jogada contruirJogada(String jogadaString){
-		List<Carta> cartas = construirCartas(jogadaString);
-		return new Jogada(cartas, obterRegra(cartas));
+		List<Carta> cartas = construirCartas(jogadaString)
+		return new Jogada(cartas, obterRegra(cartas))
 	}
 
 	List<Carta> construirCartas(String jogadaString){
-		List<Carta> cartas = [];
+		List<Carta> cartas = []
 		for(String carta in jogadaString.split(" ")){
 			cartas.add(new Carta(Nipe.obterPorValor(carta[1]), ValorDaCarta.obterPorValor(carta[0])))
 		}
-		cartas;
+		cartas
 	}
 
 	Regra obterRegra(List<Carta> cartas){
 		for(Regra tipo in Regra.values()){
 			if(tipo.categoria.pertence(cartas)){
-				return tipo;
+				return tipo
 			}
 		}
-		throw new RuntimeException("A categoria não foi encontrada");
+		throw new RuntimeException("A categoria não foi encontrada")
 	}
 }
