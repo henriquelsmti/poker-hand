@@ -16,7 +16,7 @@ class CategoriaHelperSpec extends Specification{
 	CategoriaHelper helper = new CategoriaHelper()
 
 
-	def "contar maior ocorrenciade de mesmo valor"() {
+	def "conta a maior ocorrenciade de mesmo valor"() {
 		given:
 		List<Carta> cartas = pokerHandHelper.construirCartas("7H 7C QC JS TS");
 
@@ -24,7 +24,7 @@ class CategoriaHelperSpec extends Specification{
 		helper.contarMaiorOcorrenciadeMesmoValor(cartas) == 2
 	}
 
-	def "obter cartas maior valor"(){
+	def "obtem as cartas maior valor"(){
 		given:
 		List<Carta> cartas = pokerHandHelper.construirCartas("AH AC QC JS TS");
 		List<Carta> resultado = pokerHandHelper.construirCartas("AH AC");
@@ -34,12 +34,12 @@ class CategoriaHelperSpec extends Specification{
 	}
 
 
-	def "obter valor da carta da maior contagem"(){
+	def "obtem o valor da carta com a maior ocorrencia de valor"(){
 		given:
 		List<Carta> cartas = pokerHandHelper.construirCartas("AH AC QC JS TS");
 		Map<ValorDaCarta, Integer> map = helper.contarCartasPorValor(cartas)
 		expect:
-		helper.obterValorDaCartaDaMaiorContagem(map) == ValorDaCarta.AS
+		helper.obterValorDaCartaDaMaiorOcorrencia(map) == ValorDaCarta.AS
 	}
 
 	def "contar cartas por valor"(){
@@ -55,7 +55,7 @@ class CategoriaHelperSpec extends Specification{
 		helper.contarCartasPorValor(cartas) == resultado
 	}
 
-	def "e do mesmo nipe"(){
+	def "é do mesmo nipe"(){
 		given:
 		List<Carta> cartas = pokerHandHelper.construirCartas("AH AH QH JH TH");
 
@@ -79,7 +79,7 @@ class CategoriaHelperSpec extends Specification{
 		helper.emSequanciaDeValor(cartas)
 	}
 
-	def "não em sequancia de valor"(){
+	def "não esta em sequancia de valor"(){
 		given:
 		List<Carta> cartas = pokerHandHelper.construirCartas("AH AC QC JS TS");
 

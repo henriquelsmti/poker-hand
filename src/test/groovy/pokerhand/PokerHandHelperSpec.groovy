@@ -10,7 +10,7 @@ import spock.lang.Specification
  */
 class PokerHandHelperSpec extends Specification{
 
-	def "verificar contrução das cartas"(){
+	def "contrução das cartas"(){
 		given:
 		String mao = "${ carta1 } ${ carta2 } ${ carta3 } ${ carta4 } ${ carta5 }"
 
@@ -39,7 +39,7 @@ class PokerHandHelperSpec extends Specification{
 
 	}
 
-	def "varifica a construção das categorias"(){
+	def "construção das categorias"(){
 		when:
 		PokerHandHelper helper = new PokerHandHelper()
 		Regra regraCriada = helper.obterRegra(helper.construirCartas(jogada));

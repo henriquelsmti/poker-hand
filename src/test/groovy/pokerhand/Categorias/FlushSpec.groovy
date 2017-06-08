@@ -22,7 +22,7 @@ class FlushSpec extends Specification{
 
 	}
 
-	def "testar obterValorDesempate"(){
+	def "testar obter valor do desempate"(){
 		given:
 		List<Carta> cartas = helper.construirCartas("AS AS KS 7S 3S")
 

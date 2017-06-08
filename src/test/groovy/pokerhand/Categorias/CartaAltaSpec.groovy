@@ -22,7 +22,7 @@ class CartaAltaSpec extends Specification{
 
 	}
 
-	def "testar obterValorDesempate"(){
+	def "testar obter valor do desempate"(){
 		given:
 		List<Carta> cartas = helper.construirCartas("5C JH 4S 3S 8S")
 

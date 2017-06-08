@@ -17,7 +17,7 @@ class CategoriaHelper {
 
 	List<Carta> obterCartasMaiorValor(List<Carta> cartas){
 		Map<ValorDaCarta, Integer> map = contarCartasPorValor(cartas);
-		ValorDaCarta maior = obterValorDaCartaDaMaiorContagem(map);
+		ValorDaCarta maior = obterValorDaCartaDaMaiorOcorrencia(map);
 		List<Carta> retorno = new ArrayList<>();
 		for(Carta carta in cartas){
 			if(carta.valor == maior)
@@ -36,7 +36,7 @@ class CategoriaHelper {
 		return maior
 	}
 
-	ValorDaCarta obterValorDaCartaDaMaiorContagem(Map<ValorDaCarta, Integer> map){
+	ValorDaCarta obterValorDaCartaDaMaiorOcorrencia(Map<ValorDaCarta, Integer> map){
 		Map.Entry maior;
 		for(Map.Entry<ValorDaCarta, Integer> item in map.entrySet()){
 			if(!maior || (maior && maior.value < item.value)){

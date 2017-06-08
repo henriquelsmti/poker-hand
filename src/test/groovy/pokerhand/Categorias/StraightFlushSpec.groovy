@@ -23,7 +23,7 @@ class StraightFlushSpec extends Specification{
 
 	}
 
-	def "testar obterValorDesempate"(){
+	def "testar obter valor do desempate"(){
 		given:
 		List<Carta> cartas = helper.construirCartas("2C 3C 4C 5C 6C")
 

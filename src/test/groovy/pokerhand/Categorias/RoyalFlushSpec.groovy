@@ -23,7 +23,7 @@ class RoyalFlushSpec extends Specification{
 
 	}
 
-	def "testar obterValorDesempate"(){
+	def "testar obter valor do desempate"(){
 		given:
 		List<Carta> cartas = helper.construirCartas("TC JC QC KC AC")
 

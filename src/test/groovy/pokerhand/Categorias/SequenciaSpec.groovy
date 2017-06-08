@@ -23,7 +23,7 @@ class SequenciaSpec extends Specification{
 
 	}
 
-	def "testar obterValorDesempate"(){
+	def "testar obter valor do desempate"(){
 		given:
 		List<Carta> cartas = helper.construirCartas("2S 3H 4D 5H 6C")
 

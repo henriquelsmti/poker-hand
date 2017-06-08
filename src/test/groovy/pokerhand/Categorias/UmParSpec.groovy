@@ -23,7 +23,7 @@ class UmParSpec extends Specification{
 
 	}
 
-	def "testar obterValorDesempate"(){
+	def "testar obter valor do desempate"(){
 		given:
 		List<Carta> cartas = helper.construirCartas("5C 8H 4S AS AS")
 

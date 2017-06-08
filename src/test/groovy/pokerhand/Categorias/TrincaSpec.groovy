@@ -23,7 +23,7 @@ class TrincaSpec extends Specification{
 
 	}
 
-	def "testar obterValorDesempate"(){
+	def "testar obter valor do desempate"(){
 		given:
 		List<Carta> cartas = helper.construirCartas("TD 3C KH KS KC")
 

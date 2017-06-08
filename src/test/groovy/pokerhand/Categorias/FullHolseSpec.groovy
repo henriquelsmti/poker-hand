@@ -21,7 +21,7 @@ class FullHolseSpec extends Specification{
 
 	}
 
-	def "testar obterValorDesempate"(){
+	def "testar obter valor do desempate"(){
 		given:
 		List<Carta> cartas = helper.construirCartas("5S 5D AC AS AH")
 

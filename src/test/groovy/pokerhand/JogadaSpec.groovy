@@ -11,7 +11,7 @@ class JogadaSpec extends Specification{
 
 	PokerHandHelper helper = new PokerHandHelper();
 
-	def "testar valorDesenpateDaJogada"(){
+	def "valor de desenpate da jogada"(){
 		given:
 		Jogada jogada = helper.contruirJogada("AS AS KS 7S 3S")
 

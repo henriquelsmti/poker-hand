@@ -16,6 +16,6 @@ class FullHolse extends Base{
 	@Override
 	int obterValorDesempate(List<Carta> cartas) {
 		Map<ValorDaCarta, Integer> map = helper.contarCartasPorValor(cartas);
-		helper.obterValorDaCartaDaMaiorContagem(map).ordinal();
+		helper.obterValorDaCartaDaMaiorOcorrencia(map).ordinal();
 	}
 }
