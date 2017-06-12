@@ -1,8 +1,7 @@
 package pokerhand.Categorias
 
 import pokerhand.Carta
-import pokerhand.PokerHandHelper
-import pokerhand.categorias.RoyalFlush
+import pokerhand.PokerHandUtil
 import pokerhand.categorias.Sequencia
 import pokerhand.type.ValorDaCarta
 import spock.lang.Specification
@@ -12,11 +11,10 @@ import spock.lang.Specification
  */
 class SequenciaSpec extends Specification{
 
-	PokerHandHelper helper = new PokerHandHelper()
 
 	def "testar pertence"(){
 		given:
-		List<Carta> cartas = helper.construirCartas("2S 3H 4D 5H 6C")
+		List<Carta> cartas = PokerHandUtil.construirCartas("2S 3H 4D 5H 6C")
 
 		expect:
 		new Sequencia().pertence(cartas)
@@ -25,7 +23,7 @@ class SequenciaSpec extends Specification{
 
 	def "testar obter valor do desempate"(){
 		given:
-		List<Carta> cartas = helper.construirCartas("2S 3H 4D 5H 6C")
+		List<Carta> cartas = PokerHandUtil.construirCartas("2S 3H 4D 5H 6C")
 
 		expect:
 		new Sequencia().obterValorDesempate(cartas) == ValorDaCarta.SEIS.ordinal()

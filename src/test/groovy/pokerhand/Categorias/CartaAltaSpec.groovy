@@ -1,7 +1,7 @@
 package pokerhand.Categorias
 
 import pokerhand.Carta
-import pokerhand.PokerHandHelper
+import pokerhand.PokerHandUtil
 import pokerhand.categorias.CartaAlta
 import pokerhand.type.ValorDaCarta
 import spock.lang.Specification
@@ -11,11 +11,10 @@ import spock.lang.Specification
  */
 class CartaAltaSpec extends Specification{
 
-	PokerHandHelper helper = new PokerHandHelper()
 
 	def "testar pertence"(){
 		given:
-		List<Carta> cartas = helper.construirCartas("5C JH 4S 3S 8S")
+		List<Carta> cartas = PokerHandUtil.construirCartas("5C JH 4S 3S 8S")
 
 		expect:
 		new CartaAlta().pertence(cartas)
@@ -24,7 +23,7 @@ class CartaAltaSpec extends Specification{
 
 	def "testar obter valor do desempate"(){
 		given:
-		List<Carta> cartas = helper.construirCartas("5C JH 4S 3S 8S")
+		List<Carta> cartas = PokerHandUtil.construirCartas("5C JH 4S 3S 8S")
 
 		expect:
 		new CartaAlta().obterValorDesempate(cartas) == ValorDaCarta.VALETE.ordinal()

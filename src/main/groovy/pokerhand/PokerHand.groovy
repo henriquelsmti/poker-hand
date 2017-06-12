@@ -8,10 +8,9 @@ import pokerhand.type.Result
 class PokerHand {
 
 	Jogada jogada
-	private PokerHandHelper helper = new PokerHandHelper()
 
 	PokerHand(String jogada){
-		this.jogada = helper.contruirJogada(jogada)
+		this.jogada = PokerHandUtil.contruirJogada(jogada)
 	}
 
 	Result compareWith(PokerHand other){

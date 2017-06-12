@@ -1,17 +1,18 @@
 package pokerhand.categorias
 
 import pokerhand.Carta
+import pokerhand.Categoria
 import pokerhand.type.ValorDaCarta
 
 /**
  * Created by henriquemota on 06/06/17.
  */
-class DoisPares extends Base {
+class DoisPares implements Categoria{
 	@Override
 	boolean pertence(List<Carta> cartas) {
 
 		int i = 0
-		for(Map.Entry<ValorDaCarta, Integer> item in helper.contarCartasPorValor(cartas)){
+		for(Map.Entry<ValorDaCarta, Integer> item in CategoriaUtil.contarCartasPorValor(cartas)){
 			if(item.value == 2){
 				i++
 			}
@@ -22,7 +23,7 @@ class DoisPares extends Base {
 	@Override
 	int obterValorDesempate(List<Carta> cartas) {
 		Map.Entry<ValorDaCarta, Integer> kicker = null
-		for(Map.Entry<ValorDaCarta, Integer> item in helper.contarCartasPorValor(cartas)){
+		for(Map.Entry<ValorDaCarta, Integer> item in CategoriaUtil.contarCartasPorValor(cartas)){
 			if(!kicker || (kicker && kicker.value > item.value)){
 				kicker = item
 			}

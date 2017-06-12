@@ -7,15 +7,15 @@ import pokerhand.type.ValorDaCarta
 /**
  * Created by henriquemota on 06/06/17.
  */
-class CategoriaHelper {
+class CategoriaUtil {
 
 
-	int contarMaiorOcorrenciadeMesmoValor(List<Carta> cartas) {
+	static int contarMaiorOcorrenciadeMesmoValor(List<Carta> cartas) {
 		Map<ValorDaCarta, Integer> map = contarCartasPorValor(cartas)
 		obterMaiorContagem(map)
 	}
 
-	List<Carta> obterCartasMaiorValor(List<Carta> cartas){
+	static List<Carta> obterCartasMaiorValor(List<Carta> cartas){
 		Map<ValorDaCarta, Integer> map = contarCartasPorValor(cartas)
 		ValorDaCarta maior = obterValorDaCartaDaMaiorOcorrencia(map)
 		List<Carta> retorno = new ArrayList<>()
@@ -26,7 +26,7 @@ class CategoriaHelper {
 		return retorno
 	}
 
-	private int obterMaiorContagem(Map<ValorDaCarta, Integer> map){
+	private static  int obterMaiorContagem(Map<ValorDaCarta, Integer> map){
 		Integer maior = null
 		for(Map.Entry<ValorDaCarta, Integer> item in map.entrySet()) {
 			if (!maior || (maior && maior < item.value)) {
@@ -36,7 +36,7 @@ class CategoriaHelper {
 		return maior
 	}
 
-	ValorDaCarta obterValorDaCartaDaMaiorOcorrencia(Map<ValorDaCarta, Integer> map){
+	static ValorDaCarta obterValorDaCartaDaMaiorOcorrencia(Map<ValorDaCarta, Integer> map){
 		Map.Entry<ValorDaCarta, Integer> maior = null
 		for(Map.Entry<ValorDaCarta, Integer> item in map.entrySet()){
 			if(!maior || (maior && maior.value < item.value)){
@@ -46,7 +46,7 @@ class CategoriaHelper {
 		return maior.key
 	}
 
-	Map<ValorDaCarta, Integer> contarCartasPorValor(List<Carta> cartas){
+	static Map<ValorDaCarta, Integer> contarCartasPorValor(List<Carta> cartas){
 		Map<ValorDaCarta, Integer> map = new HashMap<>()
 		for (Carta carta in cartas) {
 			Integer cont = map.get(carta.valor)
@@ -59,7 +59,7 @@ class CategoriaHelper {
 		return map
 	}
 
-	boolean eDoMesmoNipe(List<Carta> cartas){
+	static boolean eDoMesmoNipe(List<Carta> cartas){
 		Nipe nipe = cartas[0].nipe
 		for(Carta carta in cartas){
 			if(nipe != carta.nipe)
@@ -68,7 +68,7 @@ class CategoriaHelper {
 		return true
 	}
 
-	boolean emSequanciaDeValor(List<Carta> cartas){
+	static boolean emSequanciaDeValor(List<Carta> cartas){
 		cartas = ordenarPorValor(cartas)
 		int fatorDaOrdem = cartas.get(0).valor.ordinal()
 
@@ -80,7 +80,7 @@ class CategoriaHelper {
 		return true
 	}
 
-	List<Carta> ordenarPorValor(List<Carta> cartas){
+	static List<Carta> ordenarPorValor(List<Carta> cartas){
 		List<Carta> listaOrdenada = new ArrayList<>(cartas)
 		listaOrdenada.sort{it.valor.ordinal()}
 		listaOrdenada

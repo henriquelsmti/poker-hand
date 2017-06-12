@@ -1,21 +1,22 @@
 package pokerhand.categorias
 
 import pokerhand.Carta
+import pokerhand.Categoria
 
 /**
  * Created by henriquemota on 06/06/17.
  */
-class Trinca extends Base {
+class Trinca implements Categoria{
 	@Override
 	boolean pertence(List<Carta> cartas) {
-		helper.contarMaiorOcorrenciadeMesmoValor(cartas) == 3
+		CategoriaUtil.contarMaiorOcorrenciadeMesmoValor(cartas) == 3
 	}
 
 	@Override
 	int obterValorDesempate(List<Carta> cartas) {
 		List<Carta> cartasMenores = new ArrayList<>(cartas)
-		cartasMenores.removeAll(helper.obterCartasMaiorValor(cartas))
-		cartasMenores = helper.ordenarPorValor(cartasMenores)
+		cartasMenores.removeAll(CategoriaUtil.obterCartasMaiorValor(cartas))
+		cartasMenores = CategoriaUtil.ordenarPorValor(cartasMenores)
 		cartasMenores[cartasMenores.size() -1].valor.ordinal()
 	}
 }

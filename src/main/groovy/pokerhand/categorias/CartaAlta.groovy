@@ -1,11 +1,12 @@
 package pokerhand.categorias
 
 import pokerhand.Carta
+import pokerhand.Categoria
 
 /**
  * Created by henriquemota on 06/06/17.
  */
-class CartaAlta extends Base{
+class CartaAlta implements Categoria{
 	@Override
 	boolean pertence(List<Carta> cartas) {
 		true
@@ -13,7 +14,7 @@ class CartaAlta extends Base{
 
 	@Override
 	int obterValorDesempate(List<Carta> cartas) {
-		cartas = helper.ordenarPorValor(cartas)
+		cartas = CategoriaUtil.ordenarPorValor(cartas)
 		cartas[cartas.size() - 1].valor.ordinal()
 	}
 }

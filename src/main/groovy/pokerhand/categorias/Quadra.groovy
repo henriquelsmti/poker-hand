@@ -7,16 +7,16 @@ import pokerhand.type.ValorDaCarta
 /**
  * Created by henriquemota on 06/06/17.
  */
-class Quadra extends Base{
+class Quadra implements Categoria{
 	@Override
 	boolean pertence(List<Carta> cartas) {
-		helper.contarMaiorOcorrenciadeMesmoValor(cartas) == 4
+		CategoriaUtil.contarMaiorOcorrenciadeMesmoValor(cartas) == 4
 	}
 
 	@Override
 	int obterValorDesempate(List<Carta> cartas) {
 		Map.Entry<ValorDaCarta, Integer> kicker = null
-		for(Map.Entry<ValorDaCarta, Integer> item in helper.contarCartasPorValor(cartas)){
+		for(Map.Entry<ValorDaCarta, Integer> item in CategoriaUtil.contarCartasPorValor(cartas)){
 			if(!kicker || (kicker && kicker.value > item.value)){
 				kicker = item
 			}

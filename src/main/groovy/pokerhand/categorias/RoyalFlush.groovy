@@ -8,11 +8,11 @@ import pokerhand.type.ValorDaCarta
 /**
  * Created by henriquemota on 06/06/17.
  */
-class RoyalFlush extends Base{
+class RoyalFlush implements Categoria{
 
 	@Override
 	boolean pertence(List<Carta> cartas){
-		if(!helper.eDoMesmoNipe(cartas))
+		if(!CategoriaUtil.eDoMesmoNipe(cartas))
 			return false
 
 		return contemOValor(cartas, ValorDaCarta.DEZ) &&
