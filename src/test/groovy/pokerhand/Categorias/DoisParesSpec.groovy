@@ -25,6 +25,6 @@ class DoisParesSpec extends Specification{
 		List<Carta> cartas = PokerHandUtil.construirCartas("TC TS QS QH AS")
 
 		expect:
-		new DoisPares().obterValorDesempate(cartas) == ValorDaCarta.AS.ordinal()
+		new DoisPares().obterValoresDesempate(cartas) == Arrays.asList(ValorDaCarta.RAINHA.ordinal(), ValorDaCarta.AS.ordinal())
 	}
 }

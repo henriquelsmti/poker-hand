@@ -21,7 +21,7 @@ class PokerHandSpec extends Specification{
 
 		where:
 		mao1             | mao2             || resultadoEsperado
-		"TC TH 5C 5H KH" | "9C 9H 5C 5H AC" || Result.LOSS
+		"TC TH 5C 5H KH" | "9C 9H 5C 5H AC" || Result.WIN
 		"TS TD KC JC 7C" | "JS JC AS KC TD" || Result.LOSS
 		"7H 7C QC JS TS" | "7D 7C JS TS 6D" || Result.WIN
 		"5S 5D 8C 7S 6H" | "7D 7S 5S 5D JS" || Result.LOSS

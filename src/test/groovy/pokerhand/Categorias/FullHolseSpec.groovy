@@ -25,6 +25,6 @@ class FullHolseSpec extends Specification{
 		List<Carta> cartas = PokerHandUtil.construirCartas("5S 5D AC AS AH")
 
 		expect:
-		new FullHolse().obterValorDesempate(cartas) == ValorDaCarta.AS.ordinal()
+		new FullHolse().obterValoresDesempate(cartas) ==  Arrays.asList(ValorDaCarta.AS.ordinal())
 	}
 }

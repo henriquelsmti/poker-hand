@@ -14,8 +14,8 @@ class FullHolse implements Categoria{
 	}
 
 	@Override
-	int obterValorDesempate(List<Carta> cartas) {
+	List<Integer> obterValoresDesempate(List<Carta> cartas) {
 		Map<ValorDaCarta, Integer> map = CategoriaUtil.contarCartasPorValor(cartas)
-		CategoriaUtil.obterValorDaCartaDaMaiorOcorrencia(map).ordinal()
+		return Arrays.asList(CategoriaUtil.obterValorDaCartaDaMaiorOcorrencia(map).ordinal())
 	}
 }

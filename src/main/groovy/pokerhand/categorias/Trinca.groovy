@@ -13,10 +13,11 @@ class Trinca implements Categoria{
 	}
 
 	@Override
-	int obterValorDesempate(List<Carta> cartas) {
+	List<Integer> obterValoresDesempate(List<Carta> cartas) {
 		List<Carta> cartasMenores = new ArrayList<>(cartas)
 		cartasMenores.removeAll(CategoriaUtil.obterCartasMaiorValor(cartas))
 		cartasMenores = CategoriaUtil.ordenarPorValor(cartasMenores)
-		cartasMenores[cartasMenores.size() -1].valor.ordinal()
+
+		return Arrays.asList(cartasMenores[cartasMenores.size() -1].valor.ordinal())
 	}
 }

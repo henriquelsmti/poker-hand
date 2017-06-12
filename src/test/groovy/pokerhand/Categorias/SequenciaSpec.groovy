@@ -26,6 +26,6 @@ class SequenciaSpec extends Specification{
 		List<Carta> cartas = PokerHandUtil.construirCartas("2S 3H 4D 5H 6C")
 
 		expect:
-		new Sequencia().obterValorDesempate(cartas) == ValorDaCarta.SEIS.ordinal()
+		new Sequencia().obterValoresDesempate(cartas) ==  Arrays.asList(ValorDaCarta.SEIS.ordinal())
 	}
 }

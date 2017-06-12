@@ -26,6 +26,6 @@ class TrincaSpec extends Specification{
 		List<Carta> cartas = PokerHandUtil.construirCartas("TD 3C KH KS KC")
 
 		expect:
-		new Trinca().obterValorDesempate(cartas) == ValorDaCarta.DEZ.ordinal()
+		new Trinca().obterValoresDesempate(cartas) ==  Arrays.asList(ValorDaCarta.DEZ.ordinal())
 	}
 }

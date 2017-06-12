@@ -14,14 +14,14 @@ class Quadra implements Categoria{
 	}
 
 	@Override
-	int obterValorDesempate(List<Carta> cartas) {
+	List<Integer> obterValoresDesempate(List<Carta> cartas) {
 		Map.Entry<ValorDaCarta, Integer> kicker = null
 		for(Map.Entry<ValorDaCarta, Integer> item in CategoriaUtil.contarCartasPorValor(cartas)){
 			if(!kicker || (kicker && kicker.value > item.value)){
 				kicker = item
 			}
 		}
-		kicker.key.ordinal()
+		return Arrays.asList(kicker.key.ordinal())
 	}
 
 }

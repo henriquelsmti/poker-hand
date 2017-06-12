@@ -26,6 +26,6 @@ class CartaAltaSpec extends Specification{
 		List<Carta> cartas = PokerHandUtil.construirCartas("5C JH 4S 3S 8S")
 
 		expect:
-		new CartaAlta().obterValorDesempate(cartas) == ValorDaCarta.VALETE.ordinal()
+		new CartaAlta().obterValoresDesempate(cartas) == Arrays.asList(ValorDaCarta.VALETE.ordinal())
 	}
 }

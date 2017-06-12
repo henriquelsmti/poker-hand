@@ -25,6 +25,6 @@ class RoyalFlushSpec extends Specification{
 		List<Carta> cartas = PokerHandUtil.construirCartas("TC JC QC KC AC")
 
 		expect:
-		new RoyalFlush().obterValorDesempate(cartas) == Integer.MAX_VALUE
+		new RoyalFlush().obterValoresDesempate(cartas) ==  Arrays.asList(Integer.MAX_VALUE)
 	}
 }

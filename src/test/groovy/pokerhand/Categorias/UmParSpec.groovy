@@ -26,6 +26,9 @@ class UmParSpec extends Specification{
 		List<Carta> cartas = PokerHandUtil.construirCartas("5C 8H 4S AS AS")
 
 		expect:
-		new UmPar().obterValorDesempate(cartas) == ValorDaCarta.OITO.ordinal()
+		new UmPar().obterValoresDesempate(cartas) ==  Arrays.asList(ValorDaCarta.AS.ordinal(),
+				ValorDaCarta.OITO.ordinal(),
+				ValorDaCarta.CINCO.ordinal(),
+				ValorDaCarta.QUATRO.ordinal())
 	}
 }

@@ -13,7 +13,9 @@ class Flush implements Categoria{
 	}
 
 	@Override
-	int obterValorDesempate(List<Carta> cartas) {
-		CategoriaUtil.obterCartasMaiorValor(cartas)[0].valor.ordinal()
+	List<Integer> obterValoresDesempate(List<Carta> cartas) {
+		List<Integer> list = Arrays.asList(CategoriaUtil.obterCartasMaiorValor(cartas)[0].valor.ordinal())
+		//comportamento estranho, alista e limpa ao retornar
+		return new ArrayList<Integer>(list)
 	}
 }

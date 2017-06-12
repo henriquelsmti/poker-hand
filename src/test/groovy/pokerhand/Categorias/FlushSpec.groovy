@@ -26,6 +26,6 @@ class FlushSpec extends Specification{
 		List<Carta> cartas = PokerHandUtil.construirCartas("AS AS KS 7S 3S")
 
 		expect:
-		new Flush().obterValorDesempate(cartas) == ValorDaCarta.AS.ordinal()
+		new Flush().obterValoresDesempate(cartas) ==  Arrays.asList(ValorDaCarta.AS.ordinal())
 	}
 }

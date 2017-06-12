@@ -15,8 +15,9 @@ class Jogada {
 		this.regra = regra
 	}
 
-	int obterValorDesempate(){
-		regra.categoria.obterValorDesempate(cartas)
+	ArrayList<Integer> obterValoresDesempate(){
+		ArrayList<Integer> list = regra.categoria.obterValoresDesempate(cartas)
+		return list
 	}
 
 }

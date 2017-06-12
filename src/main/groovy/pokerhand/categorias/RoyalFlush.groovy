@@ -34,7 +34,7 @@ class RoyalFlush implements Categoria{
 	}
 
 	@Override
-	int obterValorDesempate(List<Carta> cartas){
-		Integer.MAX_VALUE
+	List<Integer> obterValoresDesempate(List<Carta> cartas){
+		return Arrays.asList(Integer.MAX_VALUE)
 	}
 }

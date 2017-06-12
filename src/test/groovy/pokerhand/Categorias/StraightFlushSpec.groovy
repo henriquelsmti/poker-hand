@@ -26,6 +26,6 @@ class StraightFlushSpec extends Specification{
 		List<Carta> cartas = PokerHandUtil.construirCartas("2C 3C 4C 5C 6C")
 
 		expect:
-		new StraightFlush().obterValorDesempate(cartas) == ValorDaCarta.SEIS.ordinal()
+		new StraightFlush().obterValoresDesempate(cartas) ==  Arrays.asList(ValorDaCarta.SEIS.ordinal())
 	}
 }

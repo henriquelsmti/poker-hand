@@ -14,6 +14,6 @@ class JogadaSpec extends Specification{
 		Jogada jogada = PokerHandUtil.contruirJogada("AS AS KS 7S 3S")
 
 		expect:
-		jogada.obterValorDesempate() == ValorDaCarta.AS.ordinal()
+		jogada.obterValoresDesempate() == Arrays.asList(ValorDaCarta.AS.ordinal())
 	}
 }

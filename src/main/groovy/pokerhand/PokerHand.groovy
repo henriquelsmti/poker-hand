@@ -17,15 +17,27 @@ class PokerHand {
 		int result = other.getJogada().regra.ordinal().compareTo(jogada.regra.ordinal())
 
 		if(result == 0){
-			return jogada.obterValorDesempate().compareTo(other.getJogada().obterValorDesempate()) > 0? Result.WIN : Result.LOSS
+			List<Integer> desenpateThis = jogada.obterValoresDesempate()
+			List<Integer> desenpateOther =  other.getJogada().obterValoresDesempate()
+
+			for(int i = 0; i < desenpateThis.size(); i++){
+				result = desenpateThis[i].compareTo(desenpateOther[i]);
+				if(result != 0){
+					return obterRetorno(result)
+				}
+			}
 		}
 
+		obterRetorno(result)
+	}
+
+	private Result obterRetorno(int result){
 		if(result > 0){
 			return Result.WIN
 		}else if(result < 0){
 			return Result.LOSS
 		}
-		null
+		return null
 	}
 
 }

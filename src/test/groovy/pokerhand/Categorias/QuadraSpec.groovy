@@ -25,6 +25,6 @@ class QuadraSpec extends Specification{
 		List<Carta> cartas = PokerHandUtil.construirCartas("5H 5C 5C 5S TS")
 
 		expect:
-		new Quadra().obterValorDesempate(cartas) == ValorDaCarta.DEZ.ordinal()
+		new Quadra().obterValoresDesempate(cartas) ==  Arrays.asList(ValorDaCarta.DEZ.ordinal())
 	}
 }

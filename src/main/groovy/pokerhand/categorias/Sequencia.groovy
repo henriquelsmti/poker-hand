@@ -13,8 +13,8 @@ class Sequencia implements Categoria{
 	}
 
 	@Override
-	int obterValorDesempate(List<Carta> cartas) {
+	List<Integer> obterValoresDesempate(List<Carta> cartas) {
 		cartas = CategoriaUtil.ordenarPorValor(cartas)
-		cartas[cartas.size() - 1].valor.ordinal()
+		return Arrays.asList(cartas[cartas.size() - 1].valor.ordinal())
 	}
 }

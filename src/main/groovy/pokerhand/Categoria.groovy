@@ -5,5 +5,5 @@ package pokerhand
  */
 interface Categoria {
 	boolean pertence(List<Carta> cartas)
-	int obterValorDesempate(List<Carta> cartas)
+	List<Integer> obterValoresDesempate(List<Carta> cartas)
 }

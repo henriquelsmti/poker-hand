@@ -15,21 +15,31 @@ class UmPar implements Categoria{
 	}
 
 	@Override
-	int obterValorDesempate(List<Carta> cartas) {
+	List<Integer> obterValoresDesempate(List<Carta> cartas){
+		Map.Entry<ValorDaCarta, Integer> maior = obterEntryMaiorContagem(cartas)
+		List<Integer> retorno = []
+		List<Carta> cartasSemPares = new ArrayList<>(cartas)
+		for(Carta carta in cartas){
+			if(carta.valor == maior.key){
+				cartasSemPares.remove(carta)
+			}
+		}
+		retorno.add(maior.key.ordinal())
+		cartasSemPares = CategoriaUtil.ordenarPorValor(cartasSemPares)
+		cartasSemPares = cartasSemPares.reverse()
+		cartasSemPares.each {
+			retorno.add(it.valor.ordinal())
+		}
+		return retorno;
+	}
+
+	private obterEntryMaiorContagem(List<Carta> cartas){
 		Map.Entry<ValorDaCarta, Integer> maior = null
 		for(Map.Entry<ValorDaCarta, Integer> item in CategoriaUtil.contarCartasPorValor(cartas)){
 			if(!maior || (maior && maior.value < item.value)){
 				maior = item
 			}
 		}
-
-		List<Carta> cartasSemPares = new ArrayList<>(cartas)
-
-		for(Carta carta in cartas){
-			if(carta.valor == maior.key)
-				cartasSemPares.remove(carta)
-		}
-		cartasSemPares = CategoriaUtil.ordenarPorValor(cartasSemPares)
-		cartasSemPares[cartasSemPares.size() - 1].valor.ordinal()
+		return maior
 	}
 }
